@@ -1,0 +1,10 @@
+[program:gunicorn]
+command=/usr/bin/gunicorn --bind=0.0.0.0 --worker-class eventlet --threads 2 -w 2 flask_api:app
+directory=/usr/local/bin/
+user=root
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/gunicorn.err.log
+stdout_logfile=/var/log/gunicorn.out.log
+numprocs=2
+process_name=%(program_name)s_%(process_num)02d

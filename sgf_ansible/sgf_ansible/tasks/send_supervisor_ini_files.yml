@@ -1,0 +1,3 @@
+### SEND GUNICORN .INI SERVICE TO THE SERVER
+- name: Send gunicorn.ini to the server
+  template: src=templates/processes/gunicorn.ini.j2 dest=/etc/supervisor/conf.d/gunicorn.ini

@@ -1,0 +1,24 @@
+### UPDATE SYSTEM
+- include: update_system.yml
+
+### INSTALL ESSENTIAL PACKAGES
+- include: install_essentials.yml
+
+### INSTALL PACKAGES
+- include: install_packages.yml
+
+### FLASK STUFF
+- include: flask_api.yml
+
+### INSTALL GUNICORN
+- include: install_gunicorn.yml
+
+### INSTALL SUPERVISOR
+- include: install_supervisor.yml
+
+### SEND INI FILES TO THE SERVER
+- include: send_supervisor_ini_files.yml
+
+### REBOOT (:
+- name: reboot
+  shell: reboot

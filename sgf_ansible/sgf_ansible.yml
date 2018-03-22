@@ -1,0 +1,5 @@
+---
+- hosts: sgf_ansible
+  remote_user: root
+  roles:
+  - sgf_ansible

@@ -1,0 +1,7 @@
+- name: Install essential packages
+  apt: name={{item}} state=installed
+  with_items:
+    - mailutils
+    - wget    
+    
+       

@@ -1,0 +1,14 @@
+- name: Install gunicorn
+  apt: state=latest name=gunicorn
+
+- pip:
+    name: flask
+    executable: pip
+
+- pip:
+    name: futures
+    executable: pip
+
+- pip:
+    name: eventlet
+    executable: pip

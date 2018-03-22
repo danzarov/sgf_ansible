@@ -1,0 +1,23 @@
+- name: Install python-setuptools
+  apt: state=present name=python-setuptools
+
+- name: Execute easy_install supervisor
+  shell: easy_install supervisor
+
+- name: Create directory /etc/supervisor/conf.d/
+  file: path=/etc/supervisor/conf.d/ state=directory
+
+- name: Execute 'echo_supervisord_conf > /etc/supervisor/supervisord.conf'
+  shell: echo_supervisord_conf > /etc/supervisor/supervisord.conf
+
+- name: Send the supervisor config file to the server
+  template: src=templates/supervisord.conf.j2 dest=/etc/supervisor/supervisord.conf
+
+- name: Create a systemd unit service for supervisord
+  template: src=templates/supervisord.service.j2 dest=/lib/systemd/system/supervisord.service
+
+- name: Enable supervisord unit service
+  systemd:
+    name: supervisord.service
+    enabled: yes
+

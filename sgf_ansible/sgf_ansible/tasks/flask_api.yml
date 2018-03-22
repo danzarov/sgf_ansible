@@ -1,0 +1,6 @@
+- pip:
+    name: flask
+    executable: pip3
+
+- name: Send flask_api.py file to the server
+  template: src=templates/flask_api.py.j2 dest=/usr/local/bin/flask_api.py
